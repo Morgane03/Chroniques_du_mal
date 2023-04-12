@@ -30,8 +30,13 @@ public class DialogueTrigger : MonoBehaviour
             visualCue.SetActive(true);
             if(Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log(InkJSON.text);
+                //Debug.Log(InkJSON.text);
+                DialogueManager.GetInstance().EnterDialogueMode(InkJSON);
             }
+        }
+        else
+        {
+            visualCue?.SetActive(false);
         }
     }
 
