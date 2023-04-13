@@ -28,11 +28,9 @@ public class DialogueTrigger : MonoBehaviour
         if(playerInRange)
         {
             visualCue.SetActive(true);
-            if(Input.GetKeyDown(KeyCode.Space))
-            {
-                //Debug.Log(InkJSON.text);
-                DialogueManager.GetInstance().EnterDialogueMode(InkJSON);
-            }
+            //Debug.Log(InkJSON.text);
+            DialogueManager.GetInstance().EnterDialogueMode(InkJSON);
+            
         }
         else
         {
