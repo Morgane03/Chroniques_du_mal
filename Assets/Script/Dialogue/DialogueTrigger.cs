@@ -21,20 +21,24 @@ public class DialogueTrigger : MonoBehaviour
     private void Start()
     {
         playerInRange = true;
+        DialogueMode();
     }
 
     private void Update()
     {
-        if(playerInRange)
+        if(!playerInRange)
+        {
+            visualCue?.SetActive(false);
+        }
+    }
+
+    private void DialogueMode()
+    {
+        if (playerInRange)
         {
             visualCue.SetActive(true);
             //Debug.Log(InkJSON.text);
             DialogueManager.GetInstance().EnterDialogueMode(InkJSON);
-            
-        }
-        else
-        {
-            visualCue?.SetActive(false);
         }
     }
 

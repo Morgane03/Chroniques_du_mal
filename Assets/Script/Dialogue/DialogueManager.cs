@@ -114,16 +114,20 @@ public class DialogueManager : MonoBehaviour
         }
         StartCoroutine(SelectFirstChoice());
     }
+    
 
     public IEnumerator SelectFirstChoice()
     {
         EventSystem.current.SetSelectedGameObject(null);
-        yield return new WaitForEndOfFrame();
         //EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
+        yield return new WaitForEndOfFrame();
+        
     }
+    
 
     public void MakeChoice (int choiceIndex)
     {
         currentStory.ChooseChoiceIndex(choiceIndex);
+        ContinueStory();
     }
 }
